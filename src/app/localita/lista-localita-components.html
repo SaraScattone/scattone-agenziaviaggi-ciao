@@ -1,0 +1,21 @@
+<div>
+  Inserisci filtro <input type="text" [(ngModel)]="listFilter" />
+  <h4>Filtrato per {{ listFilter }}</h4>
+</div>
+<h2>Le nostre località</h2>
+<button (click)="mostraNascondi()">
+  Immagini clicca per visualizzare le immagini
+</button>
+<div>
+  <table>
+    <tr>
+      <th>Località:</th>
+      <th>Nazione:</th>
+    </tr>
+    <tr *ngFor="let l of localita">
+      <td>{{ l.nome }}</td>
+      <td>{{ l.nazione }}</td>
+      <td><img *ngIf="mostraImmagine" [src]="l.img" width="200px" /></td>
+    </tr>
+  </table>
+</div>
